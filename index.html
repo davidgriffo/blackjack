@@ -12,18 +12,21 @@
     <p>by David Griffiths</p>
   </div>
 
-
   <div class="container">
     <div class="row">
-      <div id="dealer" class="col-sm-6 text-center" style="background-color:lavenderblush">
-        <h3 id="player1Heading">Dealer</h3>
-        <p id="player1Text"></p>
+      <div class="card" id="dealer">
+        <div class="card-body">
+          <h4 class="card-title">Card 1</h4>
+          <p class="card-text" id="player1Text">Some example text. Some example text.</p>
+        </div>
       </div>
-      <div id="player1" class="col-sm-6 text-center" style="background-color:lavenderblush">
-        <h3 id="player2Heading">Player 1</h3>
-        <p id=player2Text></p>
-        <button type="button" class="btn btn-primary" id="hit-button">Hit!</button>
-        <button type="button" class="btn btn-primary" id="stay-button">Stay</button>
+      <div class="card" id="player1">
+        <div class="card-body">
+          <h4 class="card-title">Card 2</h4>
+          <p class="card-text" id=player2Text>Some example text. Some example text.</p>
+          <button type="button" class="btn btn-primary" id="hit-button">Hit!</button>
+          <button type="button" class="btn btn-primary" id="stay-button">Stay</button>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -38,6 +41,7 @@
       </div>
     </div>
   </div>
+
 
   <script src="blackjack.js"></script>
 
