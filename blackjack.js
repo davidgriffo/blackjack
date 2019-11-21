@@ -14,12 +14,14 @@ let textArea = document.getElementById('text-area'),
     newGameButton = document.getElementById('new-game-button'),
     hitButton = document.getElementById('hit-button'),
     stayButton = document.getElementById('stay-button'),
-    player1Heading = document.getElementById('player1Heading'),
+    dealerText = document.getElementById('dealerText'),
     player1Text = document.getElementById('player1Text'),
-    player2Heading = document.getElementById('player2Heading'),
-    player2Text = document.getElementById('player2Text')
-    dealerArea = document.getElementById('dealer')
-    playerArea = document.getElementById('player1')
+    player2Text = document.getElementById('player2Text'),
+    player3Text = document.getElementById('player3Text'),
+    dealerArea = document.getElementById('dealer'),
+    player1Area = document.getElementById('player1'),
+    player2Area = document.getElementById('player2'),
+    player3Area = document.getElementById('player3')
 
 
 // Game variables
@@ -35,7 +37,9 @@ let gameStarted = false,
 hitButton.hidden = true;
 stayButton.hidden = true;
 dealerArea.hidden= true;
-playerArea.hidden = true;
+player1Area.hidden = true;
+player2Area.hidden = true;
+player3Area.hidden = true;
 //player1Text.style.display = 'none';
 //player2Text.style.display = 'none';
 showStatus();
@@ -50,7 +54,8 @@ newGameButton.addEventListener('click', function() {
   dealerCards = [ getNextCard(), getNextCard() ];
   playerCards = [ getNextCard(), getNextCard() ];
   
-  newGameButton.style.display = 'none';
+  //newGameButton.style.display = 'none';
+  newGameButton.hidden = true;
   hitButton.style.display = 'inline';
   stayButton.style.display = 'inline';
   textArea.innerText = '';
@@ -186,6 +191,8 @@ function showStatus() {
     textArea.innerText = 'Welcome to Blackjack!';
     return;
   }
+  hitButton.hidden = false;
+  stayButton.hidden = false;
   
   let dealerCardString = '';
   for (let i=0; i < dealerCards.length; i++) {
@@ -201,13 +208,13 @@ function showStatus() {
    
   
   dealerArea.hidden= false;
-  playerArea.hidden = false;
+  player1Area.hidden = false;
 
-  player1Heading.innerText = 'Dealer';
-  player1Text.innerText = dealerCardString +   '(score: '+ dealerScore  + ')\n\n';
+  //player1Heading.innerText = 'Dealer';
+  dealerText.innerText = dealerCardString +   '(score: '+ dealerScore  + ')\n\n';
 
-  player2Heading.innerText = 'Player 1';
-  player2Text.innerText =  playerCardString +   '(score: '+ playerScore  + ')\n\n';
+  //player2Heading.innerText = 'Player 1';
+  player1Text.innerText =  playerCardString +   '(score: '+ playerScore  + ')\n\n';
 
   
   if (gameOver) {
@@ -218,6 +225,7 @@ function showStatus() {
       textArea.innerText = "DEALER WINS";
     }
     newGameButton.style.display = 'inline';
+    newGameButton.hidden = false;
     hitButton.style.display = 'none';
     stayButton.style.display = 'none';
   }

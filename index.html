@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <title>Blackjack </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -16,16 +21,32 @@
     <div class="row">
       <div class="card" id="dealer">
         <div class="card-body">
-          <h4 class="card-title">Card 1</h4>
-          <p class="card-text" id="player1Text">Some example text. Some example text.</p>
+          <h4 class="card-title">Dealer</h4>
+          <p class="card-text" id="dealerText">Some example text. Some example text.</p>
         </div>
       </div>
       <div class="card" id="player1">
         <div class="card-body">
-          <h4 class="card-title">Card 2</h4>
-          <p class="card-text" id=player2Text>Some example text. Some example text.</p>
+          <h4 class="card-title">Player 1</h4>
+          <p class="card-text" id="player1Text">Some example text. Some example text.</p>
           <button type="button" class="btn btn-primary" id="hit-button">Hit!</button>
           <button type="button" class="btn btn-primary" id="stay-button">Stay</button>
+        </div>
+      </div>
+      <div class="card" id="player2">
+        <div class="card-body">
+          <h4 class="card-title">Player 2</h4>
+          <p class="card-text" id="player2Text">Some example text. Some example text.</p>
+          <button type="button" class="btn btn-primary" id="hit-button2">Hit!</button>
+          <button type="button" class="btn btn-primary" id="stay-button2">Stay</button>
+        </div>
+      </div>
+      <div class="card" id="player3">
+        <div class="card-body">
+          <h4 class="card-title">Player 3</h4>
+          <p class="card-text" id="player3Text">Some example text. Some example text.</p>
+          <button type="button" class="btn btn-primary" id="hit-button3">Hit!</button>
+          <button type="button" class="btn btn-primary" id="stay-button3">Stay</button>
         </div>
       </div>
     </div>
