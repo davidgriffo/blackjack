@@ -10,31 +10,31 @@
   <div class="jumbotron text-center" id="title">
     <h1>Blackjack</h1>
     <p>by David Griffiths</p>
-    <p id="text-area">Welcome to Blackjack!</p>
   </div>
 
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 text-center" style="background-color:lavenderblush">
-        <h3 id="player1Heading">Column 1</h3>
-        <p id="player1Text">Lorem ipsum dolor..</p>
+      <div id="dealer" class="col-sm-6 text-center" style="background-color:lavenderblush">
+        <h3 id="player1Heading">Dealer</h3>
+        <p id="player1Text"></p>
       </div>
-      <div class="col-sm-6 text-center">
-        <h3 id="player2Heading">Column 2</h3>
-        <p id=player2Text>Lorem ipsum dolor..</p>
+      <div id="player1" class="col-sm-6 text-center" style="background-color:lavenderblush">
+        <h3 id="player2Heading">Player 1</h3>
+        <p id=player2Text></p>
+        <button type="button" class="btn btn-primary" id="hit-button">Hit!</button>
+        <button type="button" class="btn btn-primary" id="stay-button">Stay</button>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12 text-center">
+        <p id="text-area">Welcome to Blackjack!</p>
         <p></p>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12 text-center">
         <button type="button" class="btn btn-primary" id="new-game-button">New Game!</button>
-        <button type="button" class="btn btn-primary" id="hit-button">Hit!</button>
-        <button type="button" class="btn btn-primary" id="stay-button">Stay</button>
       </div>
     </div>
   </div>

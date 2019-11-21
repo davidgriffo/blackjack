@@ -17,7 +17,9 @@ let textArea = document.getElementById('text-area'),
     player1Heading = document.getElementById('player1Heading'),
     player1Text = document.getElementById('player1Text'),
     player2Heading = document.getElementById('player2Heading'),
-    player2Text = document.getElementById('player2Text'),
+    player2Text = document.getElementById('player2Text')
+    dealerArea = document.getElementById('dealer')
+    playerArea = document.getElementById('player1')
 
 
 // Game variables
@@ -30,8 +32,12 @@ let gameStarted = false,
     playerScore = 0,
     deck = [];
 
-hitButton.style.display = 'none';
-stayButton.style.display = 'none';
+hitButton.hidden = true;
+stayButton.hidden = true;
+dealerArea.hidden= true;
+playerArea.hidden = true;
+//player1Text.style.display = 'none';
+//player2Text.style.display = 'none';
 showStatus();
   
 newGameButton.addEventListener('click', function() {
@@ -47,6 +53,7 @@ newGameButton.addEventListener('click', function() {
   newGameButton.style.display = 'none';
   hitButton.style.display = 'inline';
   stayButton.style.display = 'inline';
+  textArea.innerText = '';
   showStatus();
 });
 
@@ -192,21 +199,23 @@ function showStatus() {
   
   updateScores();
    
-  textArea.innerText = 
-    'Dealer has:\n' +
-    dealerCardString + 
-    '(score: '+ dealerScore  + ')\n\n' +
-    
-    'Player has:\n' +
-    playerCardString +
-    '(score: '+ playerScore  + ')\n\n';
+  
+  dealerArea.hidden= false;
+  playerArea.hidden = false;
+
+  player1Heading.innerText = 'Dealer';
+  player1Text.innerText = dealerCardString +   '(score: '+ dealerScore  + ')\n\n';
+
+  player2Heading.innerText = 'Player 1';
+  player2Text.innerText =  playerCardString +   '(score: '+ playerScore  + ')\n\n';
+
   
   if (gameOver) {
     if (playerWon) {
-      textArea.innerText += "YOU WIN!";
+      textArea.innerText = "YOU WIN!";
     }
     else {
-      textArea.innerText += "DEALER WINS";
+      textArea.innerText = "DEALER WINS";
     }
     newGameButton.style.display = 'inline';
     hitButton.style.display = 'none';
